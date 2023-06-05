@@ -68,3 +68,4 @@ for (let elemento of nombres) {
     console.log(elemento);
     const index = nombres.indexOf(elemento);
 }
+
