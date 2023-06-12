@@ -1,0 +1,44 @@
+[
+  {
+    "nombre": "Pedro",
+    "apellido": "Gurruchaga",
+    "edad": 25,
+    "state": true,
+    "id": 0
+  },
+  {
+    "nombre": "Mario",
+    "apellido": "Arriega",
+    "edad": 45,
+    "state": true,
+    "id": 1
+  },
+  {
+    "nombre": "conchinflas",
+    "apellido": "Surcher",
+    "edad": 32,
+    "state": true,
+    "id": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Pepe",
+    "apellido": "Rodriguez",
+    "edad": 12,
+    "state": true
+  },
+  {
+    "id": 4,
+    "nombre": "conchinflas",
+    "apellido": "Rodriguez",
+    "edad": 12,
+    "state": false
+  },
+  {
+    "id": 5,
+    "nombre": "Pepe",
+    "apellido": "Rodriguez",
+    "edad": 12,
+    "state": true
+  }
+]
