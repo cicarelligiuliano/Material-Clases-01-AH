@@ -99,9 +99,14 @@ class UserManager {
     }
 
     checkUser(id) {
+        //BASE DE DATOS
+        ///USERS --> COLUMNAS (props), FILAS (CADA USUARIO)
+
+        // const user = await Usuarios.findById(id)
         const user = this.users.find((user) => user.id == id);
 
         if (!user) return `No existe el usuario con id ${id}`;
+        //res.status(404).json({msg: `No existe el usuario con id ${id}`})
 
         return user;
     }
@@ -117,6 +122,7 @@ class UserManager {
         const { nombre, apellido, edad } = newUser;
 
         if (!nombre || !apellido || !edad) return 'Por favor ingrese un usuario valido';
+        //return res.status(400).json({msg: "Por favor ingrese un usuario valido"})
 
         this.lastId++;
 
@@ -131,6 +137,7 @@ class UserManager {
         this.users.push(user);
         this.save(this.users);
         return `Usuario creado correctamente con el id: ${user.id}`;
+        //return res.status(201).json({msg: `Usuario creado correctamente con el id: ${user.id}`})
     }
 
     editUser(id, newUser) {

@@ -2,5 +2,6 @@
     { "title": "Naranja", "description": "Es una fruta", "price": 100, "stock": 25, "code": "NJ15", "id": 3 },
     { "title": "Sandia", "description": "Es una fruta", "price": 500, "stock": 15, "code": "ZD15", "id": 4 },
     { "title": "Manzana", "description": "Es una fruta", "price": 200, "stock": 15, "code": "AM15", "id": 5 },
-    { "title": "Pera", "description": "Es una fruta", "price": 300, "stock": 125, "code": "PR15", "id": 6 }
+    { "title": "Pera", "description": "Es una fruta", "price": 300, "stock": 125, "code": "PR15", "id": 6 },
+    { "title": "tomate", "description": "Es una fruta", "price": 500, "stock": 15, "code": "TD15", "id": 7 }
 ]

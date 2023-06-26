@@ -27,6 +27,7 @@ router.get('/:idProduct', (req, res) => {
 
 router.post('/', (req, res) => {
     const { title, description, price, stock, code } = req.body;
+    console.log(req.body);
 
     const result = productManager.addProduct({ title, description, price, stock, code });
 
