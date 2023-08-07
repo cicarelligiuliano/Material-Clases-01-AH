@@ -30,13 +30,13 @@ let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].s
 
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Product, Category, Client, Cart } = sequelize.models;
+const { Product, Category, Client, Cart, Cart_product } = sequelize.models;
 
 Client.hasOne(Cart);
 Cart.belongsTo(Client);
 
-Cart.belongsToMany(Product, { through: 'cart_product' });
-Product.belongsToMany(Cart, { through: 'cart_product' });
+Cart.belongsToMany(Product, { through: Cart_product });
+Product.belongsToMany(Cart, { through: Cart_product });
 
 Product.belongsToMany(Category, { through: 'product_category' });
 Category.belongsToMany(Product, { through: 'product_category' });

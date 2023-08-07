@@ -21,10 +21,6 @@ const getProductById = async (req, res) => {
     try {
         const { id } = req.params;
 
-        if (!uuidValidate(id)) {
-            return res.status(400).json({ message: 'Invalid ID' });
-        }
-
         const product = await Product.findByPk(id, {
             include: {
                 model: Category,
@@ -72,18 +68,8 @@ const createProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
     try {
-        const { id } = req.params;
         const { id: oldId, categories, ...editedProduct } = req.body;
-
-        if (!uuidValidate(id)) {
-            return res.status(400).json({ message: 'Invalid ID' });
-        }
-
-        const product = await Product.findByPk(id);
-
-        if (!product) {
-            return res.status(404).json({ message: 'Product not found' });
-        }
+        const product = req.product;
 
         await product.update(editedProduct);
 
@@ -102,10 +88,6 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
-
-        if (!uuidValidate(id)) {
-            return res.status(400).json({ message: 'Invalid ID' });
-        }
 
         const product = await Product.findByPk(id);
 

@@ -8,46 +8,46 @@ conn.sync({ force: false })
     .then(async () => {
         console.log('Conexión a la base de datos exitosa');
 
-        const [giuliano] = await Client.findOrCreate({
-            where: {
-                name: 'Giuliano',
-                lastName: 'Cicarelli',
-                email: 'giuliano@email.com',
-                address: 'casa 123',
-                invoiceAddress: 'casa 123',
-                phone: '12345',
-            },
-        });
-        if (giuliano.cart != null) {
-            await giuliano.setCart(await Cart.create());
-        }
-        const [martin] = await Client.findOrCreate({
-            where: {
-                name: 'Marcos',
-                lastName: 'Daut',
-                email: 'marcos@email.com',
-                address: 'casa 123',
-                invoiceAddress: 'casa 123',
-                phone: '12345',
-            },
-        });
-        if (!martin.cart != null) {
-            await martin.setCart(await Cart.create());
-        }
+        // const [giuliano] = await Client.findOrCreate({
+        //     where: {
+        //         name: 'Giuliano',
+        //         lastName: 'Cicarelli',
+        //         email: 'giuliano@email.com',
+        //         address: 'casa 123',
+        //         invoiceAddress: 'casa 123',
+        //         phone: '12345',
+        //     },
+        // });
+        // if (!giuliano.cartId != null) {
+        //     await giuliano.setCart(await Cart.create());
+        // }
+        // const [martin] = await Client.findOrCreate({
+        //     where: {
+        //         name: 'Marcos',
+        //         lastName: 'Daut',
+        //         email: 'marcos@email.com',
+        //         address: 'casa 123',
+        //         invoiceAddress: 'casa 123',
+        //         phone: '12345',
+        //     },
+        // });
+        // if (!martin.cartId != null) {
+        //     await martin.setCart(await Cart.create());
+        // }
 
-        const [silvia] = await Client.findOrCreate({
-            where: {
-                name: 'Silvia',
-                lastName: 'Maidana',
-                email: 'silvia@email.com',
-                address: 'casa 123',
-                invoiceAddress: 'casa 123',
-                phone: '12345',
-            },
-        });
-        if (!silvia.cart != null) {
-            await silvia.setCart(await Cart.create());
-        }
+        // const [silvia] = await Client.findOrCreate({
+        //     where: {
+        //         name: 'Silvia',
+        //         lastName: 'Maidana',
+        //         email: 'silvia@email.com',
+        //         address: 'casa 123',
+        //         invoiceAddress: 'casa 123',
+        //         phone: '12345',
+        //     },
+        // });
+        // if (!silvia.cartId != null) {
+        //     await silvia.setCart(await Cart.create());
+        // }
 
         [
             'Interiores',
@@ -93,22 +93,6 @@ conn.sync({ force: false })
                 title: 'Cama',
                 description: 'Cama de 2 plazas',
                 price: 10000,
-                stock: 10,
-                weight: 20,
-                categories: ['Dormitorio'],
-            },
-            {
-                title: 'Mesa de luz',
-                description: 'Mesa de luz de madera',
-                price: 5000,
-                stock: 10,
-                weight: 20,
-                categories: ['Dormitorio'],
-            },
-            {
-                title: 'Placard',
-                description: 'Placard de 2 puertas',
-                price: 2000,
                 stock: 10,
                 weight: 20,
                 categories: ['Dormitorio'],
